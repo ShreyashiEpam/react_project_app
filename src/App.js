@@ -1,5 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import Counter from './components/counter/counter.js'
+import SearchComponent from './components/search/search.js'
+import GenreList from './components/genre/genreSelect.js'
 
 function App() {
   return (
@@ -8,6 +11,21 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
+           <Counter />
+            <SearchComponent
+                   initialQuery="initial search query"
+                   onSearch={(query) => {
+                     console.log('Search query:', query);
+                   }}
+                 />
+
+            <GenreList
+              genres={['Action', 'Comedy', 'Drama', 'Horror', 'Sci-Fi']}
+              selectedGenre="Action"
+              onSelect={(genre) => {
+                console.log('Selected genre:', genre);
+              }}
+            />
         </p>
         <a
           className="App-link"
