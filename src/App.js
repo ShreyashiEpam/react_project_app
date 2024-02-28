@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Counter from './components/counter/counter.js'
 import SearchComponent from './components/search/search.js'
@@ -8,10 +7,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
-           <Counter />
+           <Counter 
+           initialValue={0}
+           />
             <SearchComponent
                    initialQuery="initial search query"
                    onSearch={(query) => {
@@ -27,14 +26,6 @@ function App() {
               }}
             />
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
