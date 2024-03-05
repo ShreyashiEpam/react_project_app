@@ -10,6 +10,7 @@ describe('SearchComponent', () => {
   });
 
   it('renders input and button', () => {
+    
     const { getByRole } = render(<SearchComponent onSearch={mockOnSearch} />);
     expect(getByRole('textbox')).toBeInTheDocument();
     expect(getByRole('button')).toBeInTheDocument();
